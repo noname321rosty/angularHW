@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 import {EmailService} from '../services/email.service';
 import {IEmail} from '../model/email';
 
@@ -11,15 +11,16 @@ import {IEmail} from '../model/email';
 export class UserPostComponent implements OnInit {
 
   posts: IEmail[];
+  usersId: string;
 
-  constructor(private router: ActivatedRoute, private postService: EmailService ) { }
-
-  ngOnInit(): void {
-
-
-
+  constructor(private router: ActivatedRoute, private route: Router, private postService: EmailService) {
     this.router.params.subscribe(params => {
       const {id} = params;
+
+      const state = this.route.getCurrentNavigation().extras.state;
+      if (state){
+        this.usersId = state.userId;
+      }
 
       this.postService.getAllMyPosts(id).subscribe(myPosts => {
         this.posts = myPosts;
@@ -28,4 +29,11 @@ export class UserPostComponent implements OnInit {
     });
   }
 
+  ngOnInit(): void {
+  }
+
+  NavigateUserId(){
+    const url = 'users/';
+    this.route.navigate([url]);
+  }
 }

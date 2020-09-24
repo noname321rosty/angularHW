@@ -17,11 +17,9 @@ import { EmailCommentsComponent } from './email-comments/email-comments.componen
 import {UserPostResolverService} from './services/user-post-resolver.service';
 import {PostCommentResolverService} from './services/post-comment-resolver.service';
 
-//import {DeactivatorService} from './services/deactivator';
-// import {MatButtonModule} from '@angular/material/button';
+
 
 const routes: Routes = [
-  // {path: '', component: AppComponent , canDeactivate: [DeactivatorService]},
   {path: 'users', component: UsersComponent, resolve: {allUsers:UsersResolverService}, children: [
       {path: ':id/posts' , component: UserPostComponent, resolve:{allUserPost:UserPostResolverService}, children:[
           {path: ':idPosts/comments',component: PostCommentComponent, resolve:{allPostComment:PostCommentResolverService }}
@@ -50,7 +48,6 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    // MatButtonModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],

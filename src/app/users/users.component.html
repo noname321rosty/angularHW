@@ -3,9 +3,9 @@
     {{user.id}}
     {{user.name}}
 
-    <button [routerLink]="[user.id, 'posts']">get my posts</button>
+    <button [routerLink]="[user.id, 'posts']" [state]="{userId: user.id}" >get my posts</button>
 
-<!--    <button routerLink="{{user.id}}/posts">fsf</button>-->
+
     <hr>
   </div>
 

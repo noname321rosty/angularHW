@@ -1,9 +1,12 @@
+
+<button (click)="NavigateUserId()">Back</button>
 <div *ngFor="let post of posts" class="red">
   <div>
     {{post.id}}
     {{post.title}}
     {{post.body}}
-    <button [routerLink]="[post.id,'comments']">get my commentaries</button>
+
+    <button [routerLink]="[post.id,'comments']" [state]="{userId: usersId}">get my commentaries</button>
     <hr>
   </div>
 
