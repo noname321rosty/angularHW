@@ -1,0 +1,16 @@
+<div *ngFor="let post of email" class="red">
+  <div>
+    {{post.id}}
+    <hr>
+    {{post.title}}
+    <hr>
+    {{post.body}}
+    <hr>
+
+
+    <button [routerLink]="[post.id]" [state]="{postId: post.id}">get comments</button>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>

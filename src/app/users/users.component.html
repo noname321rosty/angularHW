@@ -1,0 +1,15 @@
+
+  <div  *ngFor="let user of users" class="blue">
+    {{user.id}}
+    {{user.name}}
+
+    <button [routerLink]="[user.id, 'posts']">get my posts</button>
+
+<!--    <button routerLink="{{user.id}}/posts">fsf</button>-->
+    <hr>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+

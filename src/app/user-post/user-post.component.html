@@ -1,0 +1,13 @@
+<div *ngFor="let post of posts" class="red">
+  <div>
+    {{post.id}}
+    {{post.title}}
+    {{post.body}}
+    <button [routerLink]="[post.id,'comments']">get my commentaries</button>
+    <hr>
+  </div>
+
+
+</div>
+
+<router-outlet></router-outlet>

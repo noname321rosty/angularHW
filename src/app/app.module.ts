@@ -1,14 +1,58 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppComponent } from './components/app.component';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import { UsersComponent } from './users/users.component';
+import {RouterModule, Routes} from '@angular/router';
+import { EmailComponent } from './email/email.component';
+import { CommentsComponent } from './comments/comments.component';
+import {UsersResolverService} from './services/users-resolver.service';
+import {EmailResolverService} from './services/email-resolver.service';
+import {CommentsResolverService} from './services/comments-resolver.service';
+import { UserPostComponent } from './user-post/user-post.component';
+import { CommonModule } from '@angular/common';
+import { PostCommentComponent } from './post-comment/post-comment.component';
+import { EmailCommentsComponent } from './email-comments/email-comments.component';
+import {UserPostResolverService} from './services/user-post-resolver.service';
+import {PostCommentResolverService} from './services/post-comment-resolver.service';
 
-import { AppComponent } from './app.component';
+//import {DeactivatorService} from './services/deactivator';
+// import {MatButtonModule} from '@angular/material/button';
+
+const routes: Routes = [
+  // {path: '', component: AppComponent , canDeactivate: [DeactivatorService]},
+  {path: 'users', component: UsersComponent, resolve: {allUsers:UsersResolverService}, children: [
+      {path: ':id/posts' , component: UserPostComponent, resolve:{allUserPost:UserPostResolverService}, children:[
+          {path: ':idPosts/comments',component: PostCommentComponent, resolve:{allPostComment:PostCommentResolverService }}
+        ]}
+    ]},
+  {path: 'email', component: EmailComponent, resolve: {allEmails:EmailResolverService}, children:[
+      {path:':idComments',component: EmailCommentsComponent }
+    ]},
+  {path: 'comments', component: CommentsComponent, resolve: {allComments:CommentsResolverService }},
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UsersComponent,
+    EmailComponent,
+    CommentsComponent,
+    UserPostComponent,
+    PostCommentComponent,
+    EmailCommentsComponent
+
+
+
   ],
   imports: [
-    BrowserModule
+    CommonModule,
+    BrowserModule,
+    HttpClientModule,
+    // MatButtonModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
