@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
 
 
   constructor(private activatedRoute: ActivatedRoute  ) {
-
+    // console.log(history.state);
 
     activatedRoute.data.subscribe(value => this.users = value.allUsers);
   }

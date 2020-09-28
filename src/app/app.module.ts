@@ -16,6 +16,7 @@ import { PostCommentComponent } from './post-comment/post-comment.component';
 import { EmailCommentsComponent } from './email-comments/email-comments.component';
 import {UserPostResolverService} from './services/user-post-resolver.service';
 import {PostCommentResolverService} from './services/post-comment-resolver.service';
+import { TodosComponent } from './modules/todos/todos.component';
 
 
 
@@ -39,7 +40,8 @@ const routes: Routes = [
     CommentsComponent,
     UserPostComponent,
     PostCommentComponent,
-    EmailCommentsComponent
+    EmailCommentsComponent,
+    TodosComponent
 
 
 
