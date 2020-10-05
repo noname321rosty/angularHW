@@ -1,0 +1,30 @@
+<div>
+  <select (change)="getUser()" [(ngModel)]="userId">
+    <option *ngFor="let id of idS">{{id}}</option>
+  </select>
+</div>
+
+
+<form [formGroup]="userForm" (ngSubmit)="check()" *ngIf="user">
+
+    <input type="text"  formControlName="id">
+      <p *ngIf="userForm.get('id').getError('required')">id is emty</p>
+        <br>
+    <input type="text"  formControlName="name">
+      <p *ngIf="userForm.get('name').getError('required')">name is emty</p>
+        <p *ngIf="userForm.get('name').getError('pattern')">name is invalidd</p>
+          <br>
+    <input type="email" formControlName="email" >
+      <p *ngIf="userForm.get('email').getError('required')">email is emty</p>
+
+          <br>
+    <input type="string"  formControlName="phone"> <br>
+      <p *ngIf="userForm.get('phone').getError('required')">phone is emty</p>
+
+
+  <button type="submit" [disabled]="userForm.invalid">send</button>
+
+
+<!--  <div *ngIf="!user && userId">not valid</div>-->
+</form>
+

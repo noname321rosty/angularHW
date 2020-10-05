@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IEmail} from '../model/email';
+import {IEmail} from '../interface/email';
 import {EmailService} from '../services/email.service';
 import {ActivatedRoute} from '@angular/router';
 

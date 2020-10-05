@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './components/app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import {RouterModule, Routes} from '@angular/router';
 import { EmailComponent } from './email/email.component';
@@ -17,6 +17,7 @@ import { EmailCommentsComponent } from './email-comments/email-comments.componen
 import {UserPostResolverService} from './services/user-post-resolver.service';
 import {PostCommentResolverService} from './services/post-comment-resolver.service';
 import { TodosComponent } from './modules/todos/todos.component';
+import { UserFormsComponent } from './forms/user-forms/user-forms.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
       {path:':idComments',component: EmailCommentsComponent }
     ]},
   {path: 'comments', component: CommentsComponent, resolve: {allComments:CommentsResolverService }},
+  {path: 'forms',component: UserFormsComponent}
 ];
 
 @NgModule({
@@ -41,7 +43,8 @@ const routes: Routes = [
     UserPostComponent,
     PostCommentComponent,
     EmailCommentsComponent,
-    TodosComponent
+    TodosComponent,
+    UserFormsComponent
 
 
 
@@ -51,7 +54,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

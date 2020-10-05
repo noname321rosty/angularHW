@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IComments} from '../model/comments';
+import {IComments} from '../interface/comments';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CommentsService} from '../services/comments.service';
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import {IEmail} from '../model/email';
+import {IEmail} from '../interface/email';
 import {HttpClient} from '@angular/common/http';
 
 @Injectable({

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {EmailService} from '../services/email.service';
-import {IEmail} from '../model/email';
+import {IEmail} from '../interface/email';
 
 @Component({
   selector: 'app-user-post',

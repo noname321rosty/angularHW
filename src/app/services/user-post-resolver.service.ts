@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {IEmail} from '../model/email';
+import {IEmail} from '../interface/email';
 import {EmailService} from './email.service';
 import {Observable} from 'rxjs';
 

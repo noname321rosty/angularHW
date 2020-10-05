@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {IComments} from '../model/comments';
+import {IComments} from '../interface/comments';
 import {CommentsService} from './comments.service';
 import {Observable} from 'rxjs';
 
