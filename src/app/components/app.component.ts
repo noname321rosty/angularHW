@@ -27,13 +27,15 @@ export class AppComponent {
 
   }
 
-  check(): void{
+  check(): void {
     this.showList = !this.showList;
   }
-  email(): void{
+
+  email(): void {
     this.showEmail = !this.showEmail;
   }
-  address(): void{
+
+  address(): void {
     this.showAdress = !this.showAdress;
   }
 

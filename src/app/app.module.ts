@@ -16,8 +16,10 @@ import { PostCommentComponent } from './post-comment/post-comment.component';
 import { EmailCommentsComponent } from './email-comments/email-comments.component';
 import {UserPostResolverService} from './services/user-post-resolver.service';
 import {PostCommentResolverService} from './services/post-comment-resolver.service';
-import { TodosComponent } from './modules/todos/todos.component';
+// import { TodosComponent } from './modules/todos/todos.component';
 import { UserFormsComponent } from './forms/user-forms/user-forms.component';
+import { UsersPipe } from './pipes/users.pipe';
+
 
 
 
@@ -43,8 +45,10 @@ const routes: Routes = [
     UserPostComponent,
     PostCommentComponent,
     EmailCommentsComponent,
-    TodosComponent,
-    UserFormsComponent
+    // TodosComponent
+    UserFormsComponent,
+    UsersPipe,
+
 
 
 
