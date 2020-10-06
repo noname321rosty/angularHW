@@ -29,16 +29,13 @@ export class UserFormsComponent implements OnInit {
   getUser(): void {
     // console.log(this.userId);
 
-
-
-
     this.formService.getAllForms(this.userId).subscribe(user => {
       this.user = user;
       this.userForm =  this.formBuilder.group({
-        id: [this.user.id, [Validators.required, Validators.min(1), Validators.pattern('^[0-10]+$')]],
-        name: [this.user.name, [Validators.required, Validators.pattern('^[a-zA-Z]+(([\',. -][a-zA-Z ])?[a-zA-Z]*)*$')]],
+        id: [this.user.id, [Validators.required]],
+        name: [this.user.name, [Validators.required ]],
         email: [this.user.email,  [Validators.required]],
-        phone: [this.user.phone, [Validators.required, Validators.min(7), Validators.max(35)]]
+        phone: [this.user.phone, [Validators.required]]
       });
     });
   }

@@ -12,7 +12,6 @@ export class UsersPipe implements PipeTransform {
     let changedUsers;
 
     value.forEach(user => {
-      // console.log(user);
       changedUsers += `<div>
                       <h2>${user.id} - ${user.name}</h2>
                       <p> ${user.phone} , ${user.email} </p>
