@@ -13,8 +13,9 @@ export class UsersPipe implements PipeTransform {
 
     value.forEach(user => {
       changedUsers += `<div>
-                      <h2>${user.id} - ${user.name}</h2>
-                      <p> ${user.phone} , ${user.email} </p>
+                      <h2>${user.id}  ${user.name}</h2>
+                      <p> phone:${user.phone} </p>
+                      <p> email:${user.email} </p>
                       </div>`;
     });
 

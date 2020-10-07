@@ -19,6 +19,7 @@ import {PostCommentResolverService} from './services/post-comment-resolver.servi
 // import { TodosComponent } from './modules/todos/todos.component';
 import { UserFormsComponent } from './forms/user-forms/user-forms.component';
 import { UsersPipe } from './pipes/users.pipe';
+import { UserPipesComponent } from './pipes/user-pipes/user-pipes.component';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
       {path:':idComments',component: EmailCommentsComponent }
     ]},
   {path: 'comments', component: CommentsComponent, resolve: {allComments:CommentsResolverService }},
-  {path: 'forms',component: UserFormsComponent}
+  {path: 'forms',component: UserFormsComponent},
+  {path: 'pipes',component: UserPipesComponent}
 ];
 
 @NgModule({
@@ -48,6 +50,7 @@ const routes: Routes = [
     // TodosComponent
     UserFormsComponent,
     UsersPipe,
+    UserPipesComponent,
 
 
 

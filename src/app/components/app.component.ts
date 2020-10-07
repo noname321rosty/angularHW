@@ -16,12 +16,6 @@ export class AppComponent {
   showEmail = false;
   showAdress = false;
 
-  // clickmsg = '';
-  // onClick(){
-  //   console.log(this.text);
-  // }
-
-
   constructor(private  userService: UserService) {
     this.userService.getAllUsers().subscribe(users => this.users = users);
 
